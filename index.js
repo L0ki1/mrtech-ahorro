@@ -85,11 +85,34 @@ const cluster = await Cluster.launch({
                     await page.goto(url,options);
 
             const data = await page.evaluate(() => {
-                const list = []
+                let n="";
+                let p="";
+                let s="";
+                const list = [];
+
+                if( document.querySelector(".product-info-main h1")){
+                n=  document.querySelector(".product-info-main h1").textContent
+                }else{
+                    n="?";
+                }
+
+                if( document.querySelector(".product-info-main .product-info-price .price")){
+                    p=  document.querySelector(".product-info-main .product-info-price .price").textContent
+                    }else{
+                        p="?";
+                    }
+
+                    if( document.querySelector(".product-info-main .product-info-price .product-info-stock-sku .value")){
+                        s=  document.querySelector(".product-info-main .product-info-price .product-info-stock-sku .value").textContent
+                        }else{
+                            s="?";
+                        }
+
+                
         list.push({
-                nombre: document.querySelector(".product-info-main h1")?.textContent,
-                precio: document.querySelector(".product-info-main .product-info-price .price")?.textContent,
-                sku: document.querySelector(".product-info-main .product-info-price .product-info-stock-sku .value")?.textContent
+                nombre: n,
+                precio: p,
+                sku: s
         
         });
 
