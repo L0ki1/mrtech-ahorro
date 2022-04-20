@@ -21,17 +21,10 @@ app.use(objMulter.any()); // cualquier significa cualquier tipo de archivo
 app.use(express.static("./busqueda"));
 
 
-
-
-fs.readFile('precios/ahorro.csv', function (err, data) {
-
-    
         const CreateFiles = fs.createWriteStream('precios/ahorro.csv');
         let csv="\ufeff"+"Sku,Titulo,Precio"+"\n"
         CreateFiles.write(csv)
 
-    
-});
 
 
 async function myAsyncFunction(req,res){
