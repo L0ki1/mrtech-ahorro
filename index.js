@@ -10,9 +10,12 @@ const path = require("path");
 let usando=false;
 
 const app = express();
-app.listen(80, "localhost", () => {
-  console.log("Ya estoy escuchando en el puerto 80");
-});
+app.listen(80, "localhost", (err) => {
+    if(err){
+        console.log(err);
+      }else{
+        open('http://0.0.0.0:' + port);
+      }});
 
 let objMulter = multer({ dest: "./busqueda/" }); // Instantiate multer, el objeto de parámetro pasado, dest representa la ruta de almacenamiento del archivo cargado
 app.use(objMulter.any()); // cualquier significa cualquier tipo de archivo
