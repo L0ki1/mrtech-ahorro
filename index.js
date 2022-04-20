@@ -10,7 +10,7 @@ const path = require("path");
 let usando=false;
 
 const app = express();
-app.listen(8083, "localhost", () => {
+app.listen(8083, "172.26.15.163", () => {
   console.log("Ya estoy escuchando en el puerto 8083");
 });
 
