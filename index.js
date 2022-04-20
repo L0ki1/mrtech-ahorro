@@ -10,12 +10,9 @@ const path = require("path");
 let usando=false;
 
 const app = express();
-app.listen(80, "localhost", (err) => {
-    if(err){
-        console.log(err);
-      }else{
-        open('http://0.0.0.0:' + port);
-      }});
+app.listen(8083, "localhost", () => {
+  console.log("Ya estoy escuchando en el puerto 8083");
+});
 
 let objMulter = multer({ dest: "./busqueda/" }); // Instantiate multer, el objeto de parámetro pasado, dest representa la ruta de almacenamiento del archivo cargado
 app.use(objMulter.any()); // cualquier significa cualquier tipo de archivo
@@ -24,6 +21,10 @@ app.use(objMulter.any()); // cualquier significa cualquier tipo de archivo
 app.use(express.static("./busqueda"));
 
 
+
+
+
+    
         const CreateFiles = fs.createWriteStream('precios/ahorro.csv');
         let csv="\ufeff"+"Sku,Titulo,Precio"+"\n"
         CreateFiles.write(csv)
