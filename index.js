@@ -8,7 +8,7 @@ const multer = require("multer");
 const path = require("path");
 
 let usando=false;
-
+//172.26.15.163
 const app = express();
 app.listen(8083, "172.26.15.163", () => {
   console.log("Ya estoy escuchando en el puerto 8083");
@@ -144,16 +144,11 @@ const cluster = await Cluster.launch({
 let t=ii+1;
               console.log("Escaneando : " +t+"/"+skus.length)
 
-if(skus.length==t){
+if(t>=skus.length){
                 console.log("Proceso terminado");
 
-                const dataa = fs.readFileSync('precios/ahorro.csv',
-            {encoding:'utf8', flag:'r'});
-                res.send({
-                    err: 0,
-                    msg:
-                    dataa
-                  });
+                var file = __dirname + '/precios/ahorro.csv'; res.download(file);
+
             }
 ii++;
             
