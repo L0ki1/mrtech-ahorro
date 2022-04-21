@@ -8,9 +8,9 @@ const multer = require("multer");
 const path = require("path");
 
 let usando=false;
-//172.26.15.163
+//172.26.10.51
 const app = express();
-app.listen(8083, "172.26.15.163", () => {
+app.listen(8083, "172.26.10.51", () => {
   console.log("Ya estoy escuchando en el puerto 8083");
 });
 
@@ -38,7 +38,7 @@ async function myAsyncFunction(req,res){
 
 const cluster = await Cluster.launch({
                 concurrency: Cluster.CONCURRENCY_CONTEXT,
-                maxConcurrency: 20,
+                maxConcurrency: 30,
                 puppeteerOptions: {
                     headless: true,
                  args: ['--no-sandbox']
