@@ -10,7 +10,7 @@ const path = require("path");
 let usando=false;
 //172.26.15.163
 const app = express();
-app.listen(8083, "172.26.15.163", () => {
+app.listen(8083, "localhost", () => {
   console.log("Ya estoy escuchando en el puerto 8083");
 });
 
@@ -51,6 +51,10 @@ const cluster = await Cluster.launch({
     
     let skus = bf.sku
     let i=0;
+    if (!skus  ){
+        return res.redirect('https://mrtech-mx.web.app/formato');
+
+    }
         for(let sku of skus) {     
             let t=i+1;
 
