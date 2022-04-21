@@ -90,7 +90,7 @@ console.log("Leyendo - "+t)
 
             const options = {
                 waitUntil: 'networkidle2',
-                timeout: 30000,
+                timeout: 300000,
               };
 
                     await page.goto(url,options);
