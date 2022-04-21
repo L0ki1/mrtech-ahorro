@@ -52,6 +52,7 @@ const cluster = await Cluster.launch({
     let skus = bf.sku
     let i=0;
     if (!skus  ){
+        usando=false;
         return res.redirect('https://mrtech-mx.web.app/formato');
 
     }
@@ -152,6 +153,7 @@ if(t>=skus.length){
                 console.log("Proceso terminado");
 
                 var file = __dirname + '/precios/ahorro.csv'; res.download(file);
+                usando=false;
 
             }
 ii++;
