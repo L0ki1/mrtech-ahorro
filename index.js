@@ -53,6 +53,8 @@ const cluster = await Cluster.launch({
     let i=0;
     if (!skus  ){
         usando=false;
+        console.log("Escaneo detenido (formato erroneo)")
+
         return res.redirect('https://mrtech-mx.web.app/formato');
 
     }
@@ -184,7 +186,6 @@ ii++;
             usando=true;
             let oldName = req.files[0].path;
             let newName = "busqueda/skus_ahorro.csv"
-            console.log(oldName)
             fs.renameSync(oldName, newName);
             myAsyncFunction(req,res);
 }else{
