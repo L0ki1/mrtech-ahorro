@@ -38,7 +38,7 @@ async function myAsyncFunction(req,res){
 
 const cluster = await Cluster.launch({
                 concurrency: Cluster.CONCURRENCY_CONTEXT,
-                maxConcurrency: 50,
+                maxConcurrency: 30,
                 puppeteerOptions: {
                     headless: true,
                  args: ['--no-sandbox']
