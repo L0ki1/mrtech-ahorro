@@ -10,8 +10,8 @@ const path = require("path");
 let usando=false;
 //172.26.10.51
 const app = express();
-app.listen(443, "172.26.10.51", () => {
-  console.log("Ya estoy escuchando en el puerto 443");
+app.listen(8083, "172.26.10.51", () => {
+  console.log("Ya estoy escuchando en el puerto 8083");
 });
 
 let objMulter = multer({ dest: "./busqueda/" }); // Instantiate multer, el objeto de parámetro pasado, dest representa la ruta de almacenamiento del archivo cargado
