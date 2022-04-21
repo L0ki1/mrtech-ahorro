@@ -38,7 +38,7 @@ async function myAsyncFunction(req,res){
 
 const cluster = await Cluster.launch({
                 concurrency: Cluster.CONCURRENCY_CONTEXT,
-                maxConcurrency: 10,
+                maxConcurrency: 100,
                 puppeteerOptions: {
                     headless: true,
                  args: ['--no-sandbox']
@@ -61,7 +61,7 @@ const cluster = await Cluster.launch({
         for(let sku of skus) {     
             let t=i+1;
 
-
+console.log("Leyendo - "+t)
             
             await cluster.queue('https://www.fahorro.com/catalogsearch/result/?q='+sku);
 
