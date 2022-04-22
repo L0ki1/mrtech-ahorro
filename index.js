@@ -10,6 +10,7 @@ app.listen(8083, "172.26.10.51", () => {
 
 
         app.get("/api/ahorro", (req, res) => {
-            res.send(true)
+            res.send(true);
+            console.log("Busqueda en proceso");
         });
            
