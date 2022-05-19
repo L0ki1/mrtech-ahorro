@@ -2,9 +2,9 @@
 const express = require('express') //llamamos a Express
 
 
-//172.26.10.51
+//172.26.8.19
 const app = express();
-app.listen(8083, "172.26.10.51", () => {
+app.listen(8083, "172.26.8.19", () => {
   console.log("Ya estoy escuchando en el puerto 8083");
 });
 
